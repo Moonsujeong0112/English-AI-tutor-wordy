@@ -1,0 +1,426 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fffbe9;
+    font-family: 'Pretendard', Arial, sans-serif;
+}
+.wordy-frame {
+    width: 1194px;
+    height: 834px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.wordy-header {
+    display: flex;
+    align-items: center;
+    height: 180px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    padding: 0 40px 0 32px;
+}
+.wordy-logo {
+    display: flex;
+    align-items: center;
+    font-size: 44px;
+    font-weight: 900;
+    color: #ff9800;
+    margin-right: 32px;
+}
+.wordy-logo-icon {
+    font-size: 54px;
+    margin-right: 8px;
+}
+.wordy-logo-text {
+    font-size: 44px;
+    font-weight: 900;
+    color: #ff9800;
+    letter-spacing: -2px;
+}
+
+.wordy-header-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+    margin-right: 18px;
+  }
+  .wordy-header-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    object-fit: cover;
+    cursor: pointer;
+    transition: box-shadow 0.2s, background 0.2s;
+  }
+  .wordy-header-icon:hover {
+    background: #ffe5b4;
+    box-shadow: 0 4px 16px rgba(255,167,51,0.18);
+  }
+  .wordy-home {
+    font-size: 38px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wordy-main {
+      flex: 1;
+      background: #fff6e6;
+      border-radius: 80px 80px 0 0;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.25) inset;
+      padding: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+  }
+  .wordy-chat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 48px 24px 48px;
+      gap: 15px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 500px;
+      scrollbar-width: thin;
+      scrollbar-color: #ffa733 #fff6e6;
+      scroll-behavior: smooth;
+  }
+  .wordy-chat::-webkit-scrollbar {
+      width: 8px;
+  }
+  .wordy-chat::-webkit-scrollbar-track {
+      background: #fff6e6;
+      border-radius: 4px;
+  }
+  .wordy-chat::-webkit-scrollbar-thumb {
+      background: #ffa733;
+      border-radius: 4px;
+  }
+  .wordy-chat::-webkit-scrollbar-thumb:hover {
+      background: #ff9800;
+  }
+  .wordy-chat::-webkit-scrollbar-thumb:active {
+      background: #e68900;
+  }
+  .wordy-chat-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+      min-height: fit-content;
+  }
+  .wordy-chat-row-bot {
+      justify-content: flex-start;
+  }
+  .wordy-chat-row-user {
+      justify-content: flex-end;
+  }
+  .wordy-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #fff8e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      flex-shrink: 0;
+  }
+  .wordy-bubble {
+      max-width: 900px;
+      border-radius: 60px 60px 60px 0px;
+      padding: 18px 28px;
+      font-size: 22px;
+      font-weight: 500;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      background: #fff;
+      color: #222;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+  }
+  .wordy-bubble-bot {
+      background: #fff;
+      color: #222;
+      align-items: flex-start;
+      max-width: 900px;
+  }
+  .wordy-bubble-main {
+      font-size: 22px;
+      line-height: 1.5;
+      padding: 22px 32px;
+      white-space: pre-line; /* 줄바꿈 보존 */
+      word-break: break-word;
+      background: #fff;
+      color: #222;
+  }
+  .wordy-bubble-user {
+      font-size: 22px;
+      line-height: 1.5;
+      padding: 22px 32px;
+      word-break: break-word;
+      background: #ffa733;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 60px 60px 0px 60px;
+  }
+  .wordy-input-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 48px;
+      margin-top: 12px;
+      flex-shrink: 0;
+  }
+  .wordy-input {
+      flex: 1;
+      height: 54px;
+      border-radius: 27px;
+      border: none;
+      background: #fff;
+      font-size: 20px;
+      padding: 0 20px;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.25) inset;
+      outline: none;
+  }
+  .wordy-input-attach {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: #eee;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  }
+  .wordy-input-send {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: #ffa733;
+      color: #fff;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(255,167,51,0.18);
+  }
+
+  /* 토글 스위치 스타일 */
+  .toggle-container {
+    display: flex;
+    border: 3px solid orange;
+    border-radius: 999px;
+    background-color: orange;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 56px;
+  }
+  .toggle-btn {
+    padding: 10px 24px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none;
+    transition: all 0.3s;
+    height: 56px;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .toggle-btn.active {
+    background: white;
+    color: black;
+    border-radius: 999px;
+  } 
+  
+.wordy-header-icon:hover {
+  background: #ffe5b4;
+  box-shadow: 0 4px 16px rgba(255,167,51,0.18);
+}
+.wordy-home {
+  font-size: 38px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wordy-main {
+    flex: 1;
+    background: #fff6e6;
+    border-radius: 80px 80px 0 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25) inset;
+    padding: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.wordy-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 48px 24px 48px;
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 500px;
+    scrollbar-width: thin;
+    scrollbar-color: #ffa733 #fff6e6;
+    scroll-behavior: smooth;
+}
+.wordy-chat::-webkit-scrollbar {
+    width: 8px;
+}
+.wordy-chat::-webkit-scrollbar-track {
+    background: #fff6e6;
+    border-radius: 4px;
+}
+.wordy-chat::-webkit-scrollbar-thumb {
+    background: #ffa733;
+    border-radius: 4px;
+}
+.wordy-chat::-webkit-scrollbar-thumb:hover {
+    background: #ff9800;
+}
+.wordy-chat::-webkit-scrollbar-thumb:active {
+    background: #e68900;
+}
+.wordy-chat-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    min-height: fit-content;
+}
+.wordy-chat-row-bot {
+    justify-content: flex-start;
+}
+.wordy-chat-row-user {
+    justify-content: flex-end;
+}
+.wordy-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #fff8e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    flex-shrink: 0;
+}
+.wordy-bubble {
+    max-width: 900px;
+    border-radius: 60px 60px 60px 0px;
+    padding: 18px 28px;
+    font-size: 22px;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    background: #fff;
+    color: #222;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.wordy-bubble-bot {
+    background: #fff;
+    color: #222;
+    align-items: flex-start;
+    max-width: 900px;
+}
+.wordy-bubble-main {
+    font-size: 22px;
+    line-height: 1.5;
+    padding: 22px 32px;
+    white-space: pre-line; /* 줄바꿈 보존 */
+    word-break: break-word;
+    background: #fff;
+    color: #222;
+}
+.wordy-bubble-user {
+    font-size: 22px;
+    line-height: 1.5;
+    padding: 22px 32px;
+    word-break: break-word;
+    background: #ffa733;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 60px 60px 0px 60px;
+}
+.wordy-input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 48px;
+    margin-top: 12px;
+    flex-shrink: 0;
+}
+.wordy-input {
+    flex: 1;
+    height: 54px;
+    border-radius: 27px;
+    border: none;
+    background: #fff;
+    font-size: 20px;
+    padding: 0 20px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25) inset;
+    outline: none;
+}
+.wordy-input-attach {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #eee;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.wordy-input-send {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #ffa733;
+    color: #fff;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,167,51,0.18);
+} 

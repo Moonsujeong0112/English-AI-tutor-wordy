@@ -1,0 +1,375 @@
+body {
+    margin: auto;
+    padding: 0;
+    width: 1194px;
+    height: 834px;
+    background: #ffffff;
+    font-family: 'Pretendard', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup {
+    width: 961px;
+    height: 720px;
+    background: #FEBA6A;
+    border-radius: 30px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    position: relative
+}
+.popup-header {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 32px 0 32px;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 0;
+}
+.popup-tabs {
+    display: flex;
+    gap: 0;
+    position: relative;
+    z-index: 4;
+    top: -60px;
+}
+.tab-label {
+    position: absolute;
+    /* 이거 다시는 추가하지 말 것...
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    pointer-events: none;
+  }
+
+.popup-tab-diary {
+    color: #222;
+    z-index: 3;
+    box-shadow: none !important;
+    position: relative; /* 또는 absolute, 필요에 따라 */
+    z-index: 1;         /* 더 뒤에 보이게 */
+}
+
+.popup-tab:not(.diary) {
+    background: #fff8e1;
+    color: #bdbdbd;
+    z-index: 2;
+    
+}
+.popup-tab.inactive {
+    background: #ffe0b2;
+    color: #bdbdbd;
+}
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: none; /* 배경 제거 */
+}
+.popup-close img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.popup-content {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 65px 0px 65px;
+    gap: 22px;
+}
+.popup-image {
+    width: 301px;
+    height: 234px;
+    background: #fff;
+    border-radius: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-size: 100px; (이전 이모지용, 필요 없으면 삭제) */
+}
+.popup-image img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 16px; /* 선택사항: 이미지도 둥글게 */
+}
+.popup-date-vocab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.popup-date {
+    font-size: 32px;
+    font-weight: 700;
+    background: #fff;
+    border-radius: 16px;
+    padding: 12px 0;
+    margin: 0 18px 22px 0px;
+    text-align: center;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.popup-date .sun {
+    font-size: 32px;
+}
+.popup-date .popup-date-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+.popup-vocab {
+    background: #fff;
+    border-radius: 16px;
+    margin: 0 18px 22px 0px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    font-size: 18px;
+}
+.popup-vocab-list {
+    flex: 1;
+}
+.popup-vocab-list span {
+    display: block;
+}
+.popup-vocab-list.ko {
+    color: #757575;
+}
+.popup-diary {
+    background: #fff;
+    border-radius: 16px;
+    height: 329px;
+    padding: 8px 32px 32px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    max-height: 340px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+}
+.popup-diary-title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+}
+.popup-diary-divider {
+    border-bottom: 2px solid #eee;
+    margin: 8px 0 16px 0;
+}
+.popup-diary-content {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    text-align: center;
+    line-height: 1.5;
+}
+.popup-diary-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+.popup-diary-toggle input[type="checkbox"] {
+    width: 36px;
+    height: 20px;
+}
+.popup-actions {
+    position: absolute;
+    right: 18px;
+    bottom: 60px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+.popup-actions .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.popup-actions .icon img {
+    width: 40px;   /* 실제 이미지 크기로 맞추세요 */
+    height: 40px;  /* 실제 이미지 크기로 맞추세요 */
+}
+.popup-tab-essay,
+.popup-tab-diary {
+    background: none;
+    color: inherit;
+    box-shadow: 0 0px 4px rgba(0,0,0,0.25);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 20px;
+}
+.popup-tab-essay img,
+.popup-tab-diary img {
+    display: block;
+    width: 111px;
+    height: 60px;
+    object-fit: contain;
+    box-shadow: 0 0px 4px rgba(0,0,0,0.25);
+    border-radius: 20px 20px 0 0;
+    border: none;
+}
+.popup-header {
+    position: relative; /* 기준점 */
+    z-index: 2;         /* 더 위에 보이게 */
+}
+
+.popup-diary-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* 👉 버튼을 위로 정렬 */
+    gap: 16px;
+    padding: 0 40px;
+    margin-bottom: 24px;
+  }
+  
+  .date-nav-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* 다이어리 상단과 버튼 위치 맞춤 */
+  }
+  
+  .date-nav-button {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .date-nav-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+/* --- popup_essay.css에서 복사한 토글 디자인 --- */
+.popup-diary-toggle-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.popup-diary-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+.image-toggle-button {
+  width: 65px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.image-toggle-button[aria-pressed="true"] {
+  background-color: #ffb74d;
+  justify-content: flex-end;
+}
+.toggle-text {
+  position: absolute;
+  right: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+.image-toggle-button[aria-pressed="true"] .toggle-text {
+  right: auto;
+  left: 10px;
+}
+.image-toggle-button::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: left 0.3s, right 0.3s;
+}
+.image-toggle-button[aria-pressed="true"]::before {
+  left: calc(100% - 27px);
+}
+.toggle-label {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333;
+}
+/* --- end --- */
+.original-diary-hint {
+  color: #ffb300;
+  font-size: 20px;
+  margin-top: 8px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.diary-line {
+  position: relative;
+  display: block;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+.edited {
+  display: block;
+}
+.original-hint {
+  display: block;
+  color: #b0b0b0;
+  font-size: 20px;
+  margin-top: -2px;
+  margin-left: 2px;
+  line-height: 1.1;
+}
+#popup-exchange-diary .popup-tab.active {
+  background: #FEBA6A !important;
+  color: #222 !important;
+}
+#popup-exchange-diary .popup-tab:not(.active) {
+  background: #fff8e1 !important;
+  color: #bdbdbd !important;
+}

@@ -1,0 +1,221 @@
+/* 기본 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #fffbe9;
+  font-family: 'Pretendard', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.wordy-frame {
+  width: 1194px;
+  height: 834px;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더 */
+.wordy-header {
+  display: flex;
+  align-items: center;
+  height: 180px;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  padding: 10px 40px 30px;
+  box-sizing: border-box;
+}
+
+.logo-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.logo-button img {
+  object-fit: contain;
+  width: 294px;
+  height: 142px;
+}
+
+/* 검색창 */
+.search-form {
+  margin-top: 80px;
+  width: 500px;
+  height: 55px;
+  background: #f7f7f7;
+  border: 1.5px solid #dcdcdc;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-left: 20px;
+}
+
+.search-form input[type="search"] {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  padding: 0 12px;
+  outline: none;
+  color: #222;
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.search-form .search-icon {
+  object-fit: contain;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.search-form .search-icon:hover {
+  opacity: 1;
+}
+
+.search-form:focus-within {
+  border-color: #bbb;
+  box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.2);
+}
+
+/* 오른쪽 상단 아이콘 */
+.icons {
+  position: absolute;
+  right: 30px;
+  top: 90px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
+  margin: 5px;
+}
+
+.icon-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 메인 */
+.wordy-main {
+  flex: 1;
+  background: #fff6e6;
+  border-radius: 80px 80px 0 0;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* 단어 카드 영역 */
+.word-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 80px 48px 0 30px;
+  align-items: start;
+  justify-items: start;
+  max-height: 600px;
+  overflow-y: auto;
+  background: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: #ffa733 #fff6e6;
+}
+.word-grid::-webkit-scrollbar {
+  width: 8px;
+}
+.word-grid::-webkit-scrollbar-track {
+  background: #fff6e6;
+  border-radius: 4px;
+}
+.word-grid::-webkit-scrollbar-thumb {
+  background: #ffa733;
+  border-radius: 4px;
+}
+.word-grid::-webkit-scrollbar-thumb:hover {
+  background: #ff9800;
+}
+.word-grid::-webkit-scrollbar-thumb:active {
+  background: #e68900;
+}
+
+.word-card {
+  background: #fff;
+  border-radius: 36px;
+  box-shadow: 0 4px 16px rgba(255, 167, 51, 0.1), 0 1.5px 4px rgba(0, 0, 0, 0.04);
+  padding: 35px 24px 2px;
+  width: 305px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.word-card:hover {
+  box-shadow: 0 8px 32px rgba(255, 167, 51, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.word-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff9800;
+  margin: 0 0 8px;
+}
+
+.word-card p {
+  font-size: 22px;
+  color: #888;
+  margin: 0 0 18px;
+}
+
+/* 발음 버튼 */
+.audio-button {
+  background: #fff8e1;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(255, 167, 51, 0.1);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.audio-button:hover {
+  background: #ffe5b4;
+  box-shadow: 0 4px 16px rgba(255, 167, 51, 0.18);
+}
+
+.audio-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}

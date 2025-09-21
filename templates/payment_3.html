@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/static/payment_3.css" />
+  <title>Wordy Language Learning App</title>
+</head>
+
+<body>
+  <div class="wordy-frame">
+    <header class="wordy-header">
+      <!-- 로고 버튼 -->
+      <button class="logo-button">
+        <img src="/static/img/chatbot_logo1.png" alt="Wordy Logo" />
+      </button>
+
+      <!-- 아이콘 -->
+      <div class="icons">
+        <button class="icon-button" aria-label="알림">
+          <img src="/static/img/main_icon4.png" alt="알림 아이콘" />
+        </button>
+        <button class="icon-button" aria-label="사용자">
+          <img src="/static/img/mypage_icon4.png" alt="사용자 아이콘" />
+        </button>
+      </div>
+    </header>
+
+    <main class="wordy-main">
+        <div class="order-complete-container">
+          <img src="/static/img/payment3_image.png" alt="선물 아이콘" class="gift-img" />
+          <h2>주문이 완료되었어요!</h2>
+          <p>내 영어일기 책이 7일 이내에 집으로 찾아갑니다!</p>
+          <img src="/static/img/payment3_button.png" alt="돌아가기 버튼" class="back-btn-img" style="cursor:pointer;" onclick="window.location.href = '/bookshelf';">
+        </div>
+      </main>
+      
+  </div>
+  <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+  </script>
+  </div>
+  </div>
+</body>
+
+</html>

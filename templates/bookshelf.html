@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/static/bookshelf.css" />
+  <link rel="stylesheet" href="/static/popup_diary.css" />
+  <title>Wordy bookshelf UI</title>
+</head>
+
+<body>
+  <div class="wordy-frame">
+    <header class="wordy-header">
+      <!-- 로고 버튼 -->
+      <button class="logo-button">
+        <img src="/static/img/chatbot_logo1.png" alt="Wordy Logo" />
+      </button>
+      <div class="toggle-container">
+        <button id="diaryBtn" class="toggle-btn active">일기</button>
+        <button id="essayBtn" class="toggle-btn">에세이</button>
+      </div>
+      <div class="icons">
+        <button class="icon-button" aria-label="알림">
+          <img src="/static/img/main_icon4.png" alt="알림 아이콘" />
+        </button>
+        <button class="icon-button" aria-label="사용자">
+          <img src="/static/img/mypage_icon4.png" alt="사용자 아이콘" />
+        </button>
+      </div>
+    </header>
+
+    
+    <main class="wordy-main">
+
+      <div class="bookshelf-wrapper">
+        <button class="bookshelf-button" aria-label="배송">
+          <img src="/static/img/bookshelf_button2.png" alt="배송 신청청 버튼" />
+        </button>
+      </div>
+
+      
+      <div class="word-grid">
+        <!-- 1행 -->
+        <div class="book-row">
+          <div class="books">
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image1.png" alt="책1" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image2.png" alt="책2" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image3.png" alt="책3" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image4.png" alt="책4" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image5.png" alt="책5" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+          </div>
+          <img src="{% static 'img/bookshelf_bar.png' %}" alt="책장 바" class="shelf-bar" />
+        </div>
+
+        <!-- 2행 -->
+        <div class="book-row">
+          <div class="books">
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image6.png" alt="책6" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image7.png" alt="책7" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image8.png" alt="책8" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image9.png" alt="책9" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image10.png" alt="책10" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+          </div>
+          <img src="{% static 'img/bookshelf_bar.png' %}" alt="책장 바" class="shelf-bar" />
+        </div>
+
+
+        <!-- 3행 -->
+        <div class="book-row">
+          <div class="books">
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image11.png" alt="책6" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image12.png" alt="책7" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+            <div class="book-item">
+              <img src="/static/img/bookshelf_image13.png" alt="책8" class="book-image" />
+              <button class="book-icon-button">
+                <img src="/static/img/bookshelf_icon1.png" alt="아이콘 버튼" />
+              </button>
+            </div>
+
+            </button>
+          </div>
+        </div>
+        <img src="{% static 'img/bookshelf_bar.png' %}" alt="책장 바" class="shelf-bar" />
+      </div>
+
+  </div>
+
+  </main>
+  </div>
+  <script src="/static/bookshelf_toggle.js"></script>
+  <script src="/static/popup_diary.js"></script>
+  <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-user').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    // 배송신청 버튼 클릭 시 /payment1로 이동
+    document.querySelectorAll('.bookshelf-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/payment1';
+      });
+    });
+    // 책1 클릭 시 2025-07-21 일기 팝업 띄우기
+    document.querySelectorAll('.book-item')[0].addEventListener('click', function(e) {
+      e.preventDefault();
+      showDiaryPopup('2025-07-21');
+    });
+  </script>
+</body>
+
+</html>

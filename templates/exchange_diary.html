@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/static/exchange_diary.css" />
+  <link rel="stylesheet" href="/static/popup_diary.css" />
+  <title>Wordy Language Learning App</title>
+</head>
+
+
+<body>
+  <div class="wordy-frame">
+    <header class="wordy-header">
+      <img class="header-left-icon" src="/static/img/Exchange diary_icon2.png" alt="Exchange Diary Icon" />
+      <button class="logo-button">
+        <img src="/static/img/chatbot_logo1.png" alt="Wordy Logo" />
+      </button>
+      
+      <!-- 아이콘 -->
+      <div class="icons">
+        <button class="icon-button" aria-label="알림">
+          <img src="/static/img/main_icon4.png" alt="알림 아이콘" />
+        </button>
+        <button class="icon-button" aria-label="사용자">
+          <img src="/static/img/mypage_icon4.png" alt="사용자 아이콘" />
+        </button>
+      </div>
+    </header>
+    <main class="wordy-main">
+      <div class="center-content">
+        <img class="corner-icon" src="/static/img/Exchange diary_icon1.png" alt="Exchange Diary Corner Icon" />
+        <!-- 검색창: friend_list.html과 동일한 구조로 추가 -->
+        <form class="search-form" onsubmit="return false;">
+            <input type="search" placeholder="Search" aria-label="Search" />
+            <button type="submit">
+                <img src="/static/img/voca_image3.png" alt="검색" class="search-icon" />
+            </button>
+        </form>
+        <div class="image-row">
+          <img src="/static/img/Exchange diary_image1.png" alt="Exchange Diary 1" />
+          <img src="/static/img/Exchange diary_image2.png" alt="Exchange Diary 2" />
+          <img src="/static/img/Exchange diary_image3.png" alt="Exchange Diary 3" />
+          <img src="/static/img/Exchange diary_image4.png" alt="Exchange Diary 4" />
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.header-left-icon').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/mypage';
+      });
+    });
+    // Exchange Diary 1 클릭 시 change_diary_1 팝업 띄우기
+    document.querySelectorAll('.image-row img')[0].addEventListener('click', function(e) {
+      e.preventDefault();
+      if(document.getElementById('popup-exchange-diary')) return;
+      function getPopupHtml(type) {
+        if(type === 'sent') {
+          return `
+          <div class=\"popup\" style=\"margin-top:120px;\">
+            <div class=\"popup-header\">
+              <div class=\"popup-tabs\">
+                  <button class=\"popup-tab popup-tab-diary\" id=\"tab-received\">
+                      <img src=\"/static/img/popup_button1-2.png\" alt=\"받은 일기\" />
+                      <span class=\"tab-label\">받은</span>
+                  </button>
+                  <button class=\"popup-tab popup-tab-essay active\" id=\"tab-sent\">
+                      <img src=\"/static/img/popup_button2-2.png\" alt=\"보낸 일기\" />
+                      <span class=\"tab-label\">보낸</span>
+                  </button>
+              </div>
+              <div class=\"popup-close\" id=\"popup-exchange-diary-close\">
+                  <img src=\"/static/img/popup_icon1.png\" alt=\"닫기\">
+              </div>
+            </div>
+            <div class=\"popup-content\">
+              <div class=\"popup-image\">
+                  <img src=\"/static/img/change2_img.png\" alt=\"일기 이미지\">
+              </div>
+              <div class=\"popup-date-vocab\">
+                  <div class=\"popup-date\">2025-07-17
+                      <img class=\"popup-date-icon\" src=\"/static/img/popup_icon4.png\" alt=\"날씨\">
+                  </div>
+                  <div class=\"popup-vocab\">
+                      <div class=\"popup-vocab-list\">
+                          <span>hurt</span>
+                          <span>say / said</span>
+                          <span>apologize</span>
+                          <span>make up</span>
+                          <span>together</span>
+                      </div>
+                      <div class=\"popup-vocab-list ko\">
+                          <span>다친, 아픈</span>
+                          <span>말하다 / 말했다</span>
+                          <span>사과하다</span>
+                          <span>화해하다</span>
+                          <span>함께</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class=\"popup-diary-wrapper\">
+              <div class=\"date-nav-button-wrapper\">
+                  <button class=\"date-nav-button prev\">
+                      <img src=\"/static/img/popup_icon5.png\" alt=\"이전 날짜\" />
+                  </button>
+              </div>
+              <div class=\"popup-diary\">
+                  <div class=\"popup-diary-toggle-wrapper\">
+                    <div class=\"popup-diary-toggle\">
+                      <button class=\"image-toggle-button\" id=\"toggleButton\" aria-pressed=\"false\">
+                        <span class=\"toggle-text\">OFF</span>
+                      </button>
+                      <div class=\"toggle-label\">첫 글 보기</div>
+                    </div>
+                  </div>
+                  <div class=\"popup-diary-title\">Doyeon’s Love Story</div>
+                  <div class=\"popup-diary-divider\"></div>
+                  <div class=\"popup-diary-content\">
+                  Hi Doyeon!!<br /> 
+                  You like Jinwoo?! Wow, that’s so cool!<br /> 
+                  I hope you and Jinwoo become good friends! I will help you!<br />
+                  He goes to Taekwondo with me at 3 o’clock.<br />
+                  After Taekwondo, he always says, “Let’s go eat tteokbokki!”<br /> 
+                  He really loves tteokbokki! But I don’t know what his hobby is.<br />
+                  Do you want me to ask him for you? Let me know!
+                  </div>
+                </div>
+              <div class=\"date-nav-button-wrapper\">
+                  <button class=\"date-nav-button next\">
+                      <img src=\"/static/img/popup_icon6.png\" alt=\"다음 날짜\" />
+                  </button>
+              </div>
+            </div>
+            <div class=\"popup-actions\">
+              <button class=\"icon icon-edit\">
+                  <img src=\"/static/img/popup_icon2.png\" alt=\"수정\">
+              </button>
+              <button class=\"icon icon-share\">
+                  <img src=\"/static/img/popup_icon3.png\" alt=\"공유\">
+              </button>
+            </div>
+          </div>
+          `;
+        }
+        // 받은 일기 (기존 change_diary_1)
+        return `
+        <div class=\"popup\" style=\"margin-top:120px;\">
+          <div class=\"popup-header\">
+            <div class=\"popup-tabs\">
+                <button class=\"popup-tab popup-tab-diary active\" id=\"tab-received\">
+                    <img src=\"/static/img/popup_button1-2.png\" alt=\"받은 일기\" />
+                    <span class=\"tab-label\">받은</span>
+                </button>
+                <button class=\"popup-tab popup-tab-essay\" id=\"tab-sent\">
+                    <img src=\"/static/img/popup_button2-2.png\" alt=\"보낸 일기\" />
+                    <span class=\"tab-label\">보낸</span>
+                </button>
+            </div>
+            <div class=\"popup-close\" id=\"popup-exchange-diary-close\">
+                <img src=\"/static/img/popup_icon1.png\" alt=\"닫기\">
+            </div>
+          </div>
+          <div class=\"popup-content\">
+            <div class=\"popup-image\">
+                <img src=\"/static/img/change1_img.png\" alt=\"일기 이미지\">
+            </div>
+            <div class=\"popup-date-vocab\">
+                <div class=\"popup-date\">2025-07-17
+                    <img class=\"popup-date-icon\" src=\"/static/img/popup_icon4.png\" alt=\"날씨\">
+                </div>
+                <div class=\"popup-vocab\">
+                    <div class=\"popup-vocab-list\">
+                        <span>happen</span>
+                        <span>class</span>
+                        <span>pouding</span>
+                        <span>hobby</span>
+                        <span>tell</span>
+                    </div>
+                    <div class=\"popup-vocab-list ko\">
+                        <span>일어나다</span>
+                        <span>수업</span>
+                        <span>두근거리는</span>
+                        <span>취미</span>
+                        <span>말하다</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class=\"popup-diary-wrapper\">
+            <div class=\"date-nav-button-wrapper\">
+                <button class=\"date-nav-button prev\">
+                    <img src=\"/static/img/popup_icon5.png\" alt=\"이전 날짜\" />
+                </button>
+            </div>
+            <div class=\"popup-diary\">
+                <div class=\"popup-diary-toggle-wrapper\">
+                  <div class=\"popup-diary-toggle\">
+                    <button class=\"image-toggle-button\" id=\"toggleButton\" aria-pressed=\"false\">
+                      <span class=\"toggle-text\">OFF</span>
+                    </button>
+                    <div class=\"toggle-label\">첫 글 보기</div>
+                  </div>
+                </div>
+                <div class=\"popup-diary-title\">Fall in love for the first time</div>
+                <div class=\"popup-diary-divider\"></div>
+                <div class=\"popup-diary-content\">
+                Hi, Nakyoung!<br />
+                Something really surprising happened at Taekwondo class today.<br />
+                I take the same class with your friend, Jinwoo oppa.<br />
+                The moment I saw him, my heart started pounding.<br />
+                So do you know what time Jinwoo oppa usually goes to Taekwondo?<br />
+                I heard he goes at the same time as you.<br />
+                Also, do you know what he likes or what his hobbies are?<br />
+                If you see this, please tell me!
+                </div>
+              </div>
+            <div class=\"date-nav-button-wrapper\">
+                <button class=\"date-nav-button next\">
+                    <img src=\"/static/img/popup_icon6.png\" alt=\"다음 날짜\" />
+                </button>
+            </div>
+          </div>
+          <div class=\"popup-actions\">
+            <button class=\"icon icon-edit\">
+                <img src=\"/static/img/popup_icon2.png\" alt=\"수정\">
+            </button>
+            <button class=\"icon icon-share\">
+                <img src=\"/static/img/popup_icon3.png\" alt=\"공유\">
+            </button>
+          </div>
+        </div>
+        `;
+      }
+      function renderPopup(type) {
+        if(document.getElementById('popup-exchange-diary')) document.getElementById('popup-exchange-diary').remove();
+        const wrapper = document.createElement('div');
+        wrapper.id = 'popup-exchange-diary';
+        wrapper.style.position = 'fixed';
+        wrapper.style.left = '0';
+        wrapper.style.top = '0';
+        wrapper.style.width = '100vw';
+        wrapper.style.height = '100vh';
+        wrapper.style.zIndex = '9999';
+        wrapper.style.background = 'rgba(0,0,0,0.15)';
+        wrapper.style.display = 'flex';
+        wrapper.style.justifyContent = 'center';
+        wrapper.style.alignItems = 'flex-start';
+        wrapper.innerHTML = getPopupHtml(type);
+        document.body.appendChild(wrapper);
+        document.getElementById('popup-exchange-diary-close').onclick = function() {
+          wrapper.remove();
+        };
+        // 탭 전환 이벤트 연결
+        const tabSent = document.getElementById('tab-sent');
+        if(tabSent){
+          tabSent.addEventListener('click', function() {
+            renderPopup('sent');
+          });
+        }
+        const tabReceived = document.getElementById('tab-received');
+        if(tabReceived){
+          tabReceived.addEventListener('click', function() {
+            renderPopup('received');
+          });
+        }
+        // 토글 버튼 동작 추가
+        const toggleBtn = document.getElementById('toggleButton');
+        if(toggleBtn){
+          const toggleText = toggleBtn.querySelector('.toggle-text');
+          toggleBtn.addEventListener('click', () => {
+              const isPressed = toggleBtn.getAttribute('aria-pressed') === 'true';
+              toggleBtn.setAttribute('aria-pressed', !isPressed);
+              toggleText.textContent = isPressed ? 'OFF' : 'ON';
+          });
+        }
+      }
+      renderPopup('received');
+    });
+  </script>
+</body>
+
+
+</html>
+

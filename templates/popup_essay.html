@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wordy Diary Popup UI</title>
+  <link rel="stylesheet" href="/static/popup_essay.css" />
+</head>
+<body>
+  <div class="popup">
+    <!-- 헤더 -->
+    <div class="popup-header">
+      <div class="popup-tabs">
+        <button class="popup-tab popup-tab-diary">
+          <img src="/static/img/popup_button2-2.png" alt="일기 배경" />
+          <span class="tab-label">일기</span>
+        </button>
+        <button class="popup-tab popup-tab-essay">
+          <img src="/static/img/popup_button1-2.png" alt="에세이 배경" />
+          <span class="tab-label">에세이</span>
+        </button>
+      </div>
+      <div class="popup-close">
+        <img src="/static/img/popup_icon1.png" alt="닫기" />
+      </div>
+    </div>
+
+    <!-- 본문 컨텐츠 영역 -->
+    <div class="popup-content">
+      <!-- 오늘의 표현 -->
+      <div class="popup-expression-box">
+        <div class="expression-header">오늘의 표현</div>
+        <div class="expression-slider">
+          <button class="slider-btn prev" aria-label="이전">
+            <img src="/static/img/popup_essay_button1.png" alt="이전" />
+          </button>
+
+          <div class="expression-grid">
+            <div class="expression-card">
+              <div class="expression-en">wear school uniforms</div>
+              <div class="expression-ko">교복을 입다</div>
+            </div>
+            <div class="expression-card">
+              <div class="expression-en">look smart</div>
+              <div class="expression-ko">똑똑해 보이다</div>
+            </div>
+            <div class="expression-card">
+              <div class="expression-en">save time</div>
+              <div class="expression-ko">시간을 절약하다</div>
+            </div>
+            <div class="expression-card">
+              <div class="expression-en">don’t have to</div>
+              <div class="expression-ko">~할 필요 없다</div>
+            </div>
+          </div>
+
+          <button class="slider-btn next" aria-label="다음">
+            <img src="/static/img/popup_essay_button2.png" alt="다음" />
+          </button>
+        </div>
+      </div>
+
+      <!-- 날짜 및 단어장 -->
+      <div class="popup-date-vocab">
+        <div class="popup-date">
+          2025-07-15
+          <img class="popup-date-icon" src="/static/img/popup_icon4.png" alt="날씨" />
+        </div>
+        <div class="popup-vocab">
+          <div class="popup-vocab-list">
+            <span>uniform</span>
+            <span>smart</span>
+            <span>boring</span>
+            <span>save</span>
+            <span>helpful</span>
+          </div>
+          <div class="popup-vocab-list ko">
+            <span>교복</span>
+            <span>똑똑하다</span>
+            <span>지루한</span>
+            <span>아끼다</span>
+            <span>도움이 되는</span>
+          </div>
+        </div>
+      </div>
+    </div> <!-- popup-content 끝 -->
+
+    <!-- 다이어리 -->
+    <div class="popup-diary-wrapper">
+      <div class="date-nav-button-wrapper">
+        <button class="date-nav-button prev">
+          <img src="/static/img/popup_icon5.png" alt="이전 날짜" />
+        </button>
+      </div>
+
+      <div class="popup-diary">
+        <div class="popup-diary-toggle-wrapper">
+          <div class="popup-diary-toggle">
+            <button class="image-toggle-button" id="toggleButton" aria-pressed="false">
+              <span class="toggle-text">OFF</span>
+            </button>
+            <div class="toggle-label">첫 글 보기</div>
+          </div>
+        </div>
+
+        <div class="popup-diary-title">Should students wear school uniforms?</div>
+        <div class="popup-diary-divider"></div>
+        <div class="popup-diary-content">
+            I think school uniform is good. Uniform helps us look same and smart. It is good because no more think about clothes. Some students don’t like it.<br />
+            They say it’s boring. But I think uniform make school better. Also, uniforms help us save time.  When I wake up, I wear uniform fast and go school. It’s helpful for parents too.  They don’t buy many clothes for school.<br />
+            Some people want to show their style.  But school is for learn, not for fashion.
+            So I think uniform is good idea for all students.
+        </div>
+      </div>
+
+      <div class="date-nav-button-wrapper">
+        <button class="date-nav-button next">
+          <img src="/static/img/popup_icon6.png" alt="다음 날짜" />
+        </button>
+      </div>
+    </div>
+
+    <!-- 우측 하단 기능 버튼 -->
+    <div class="popup-actions">
+      <button class="icon icon-edit">
+        <img src="/static/img/popup_icon2.png" alt="수정" />
+      </button>
+      <button class="icon icon-share">
+        <img src="/static/img/popup_icon3.png" alt="공유" />
+      </button>
+    </div>
+  </div>
+
+  <!-- 토글 스크립트 -->
+  <script>
+    const toggleBtn = document.getElementById('toggleButton');
+    const toggleText = toggleBtn.querySelector('.toggle-text');
+    toggleBtn.addEventListener('click', () => {
+      const isPressed = toggleBtn.getAttribute('aria-pressed') === 'true';
+      toggleBtn.setAttribute('aria-pressed', !isPressed);
+      toggleText.textContent = isPressed ? 'OFF' : 'ON';
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-user').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+  </script>
+</body>
+</html>

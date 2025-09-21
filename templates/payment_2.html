@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/static/payment_2.css" />
+    <title>Wordy friend list UI</title>
+</head>
+
+<body>
+    <div class="wordy-frame">
+        <header class="wordy-header">
+
+            <!-- 로고 버튼 -->
+            <button class="logo-button">
+                <img src="/static/img/chatbot_logo1.png" alt="Wordy Logo" />
+            </button>
+
+            <!-- 아이콘 -->
+            <div class="icons">
+                <button class="icon-button" aria-label="알림">
+                    <img src="/static/img/main_icon4.png" alt="알림 아이콘" />
+                </button>
+                <button class="icon-button" aria-label="사용자">
+                    <img src="/static/img/mypage_icon4.png" alt="사용자 아이콘" />
+                </button>
+            </div>
+        </header>
+
+        <main class="wordy-main">
+            <button class="back-arrow">
+                <img src="/static/img/payment2_icon3.png" alt="뒤로가기" style="width:24px; height:38px;">
+              </button>
+            <div class="container">
+              <!-- 배송지 정보 이미지 -->
+              <img src="/static/img/patyment2_image1.png" alt="배송지 정보" class="info-img" />
+              <!-- 결제 정보 이미지 -->
+              <img src="/static/img/payment2_image2.png" alt="결제 정보" class="info-img" />
+              <button class="absolute-next-btn">
+                <img src="/static/img/payment2_button2.png" alt="다음" />
+              </button>
+            </div>
+          </main>
+
+    </div>
+    <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-user').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    // 다음 버튼(.absolute-next-btn) 클릭 시 /payment3로 이동
+    document.querySelectorAll('.absolute-next-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/payment3';
+      });
+    });
+    // 뒤로가기 버튼(.back-arrow) 클릭 시 /payment1로 이동
+    document.querySelectorAll('.back-arrow').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/payment1';
+      });
+    });
+  </script>
+</body>
+
+</html>

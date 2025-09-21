@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'voca.css' %}" />
+    <title>Wordy Language Learning App</title>
+  </head>
+  <body>
+    <div class="wordy-frame">
+      <header class="wordy-header">
+        <!-- 수정된 로고 버튼 -->
+        <button class="logo-button">
+          <img src="{% static 'img/chatbot_logo1.png' %}" alt="Wordy Logo" class="logo-image" style="object-fit:contain; width:294px; height:142px;" />
+        </button>
+
+        <!-- 검색창 -->
+        <form class="search-form" onsubmit="return false;">
+          <input type="search" id="searchInput"
+                 placeholder="Search"
+                 aria-label="Search for words" />
+          <button type="submit">
+            <img src="{% static 'img/voca_image3.png' %}" alt="검색" class="search-icon" />
+          </button>
+        </form>
+
+        <!-- 아이콘 -->
+        <div class="icons">
+          <button class="icon-button" aria-label="알림">
+            <img src="{% static 'img/main_icon4.png' %}" alt="알림 아이콘" />
+          </button>
+          <button class="icon-button" aria-label="사용자">
+            <img src="{% static 'img/mypage_icon4.png' %}" alt="사용자 아이콘" />
+          </button>
+        </div>
+      </header>
+
+      <main class="wordy-main">
+        <div class="voca-flex-container" style="display: flex; flex-direction: column; height: 100%;">
+          <div class="word-grid">
+            {% comment %} 단어 카드 반복 예시 {% endcomment %}
+            <section class="word-card">
+              <h2>afternoon</h2>
+              <p lang="ko">오후</p>
+              <button class="audio-button" aria-label="Listen to pronunciation" onclick="speak('afternoon')">
+                <img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" />
+              </button>
+            </section>
+            <!-- 나머지 단어 카드도 동일한 형식으로 반복 -->
+            <section class="word-card"><h2>angry</h2><p lang="ko">화난</p><button class="audio-button" onclick="speak('angry')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>before</h2><p lang="ko">~전에</p><button class="audio-button" onclick="speak('before')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>carry</h2><p lang="ko">나르다</p><button class="audio-button" onclick="speak('carry')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>climb</h2><p lang="ko">오르다</p><button class="audio-button" onclick="speak('climb')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>fastest</h2><p lang="ko">가장 빠른</p><button class="audio-button" onclick="speak('fastest')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>grandmother</h2><p lang="ko">할머니</p><button class="audio-button" onclick="speak('grandmother')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>grandfather</h2><p lang="ko">할아버지</p><button class="audio-button" onclick="speak('grandfather')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>kindness</h2><p lang="ko">친절</p><button class="audio-button" onclick="speak('kindness')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>rainy</h2><p lang="ko">비 오는</p><button class="audio-button" onclick="speak('rainy')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>together</h2><p lang="ko">함께</p><button class="audio-button" onclick="speak('together')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+            <section class="word-card"><h2>tomorrow</h2><p lang="ko">내일</p><button class="audio-button" onclick="speak('tomorrow')"><img src="{% static 'img/voca_image1.png' %}" alt="Audio icon" class="audio-icon" /></button></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/static/voca.js"></script>
+    <script>
+      document.querySelectorAll('.logo-button').forEach(btn => {
+        btn.addEventListener('click', function() {
+          window.location.href = '/main2';
+        });
+      });
+      document.querySelectorAll('.icon-button').forEach(btn => {
+        btn.addEventListener('click', function() {
+          window.location.href = '/main2';
+        });
+      });
+    </script>
+  </body>
+</html>

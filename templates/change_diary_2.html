@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wordy Diary Popup UI</title>
+    <link rel="stylesheet" href="/static/popup_diary.css">
+</head>
+
+<body>
+    <div class="popup">
+        <div class="popup-header">
+            <div class="popup-tabs">
+
+                <button class="popup-tab popup-tab-diary">
+                    <img src="/static/img/popup_button1-2.png" alt="받은 일기" />
+                    <span class="tab-label">받은</span>
+                </button>
+                <button class="popup-tab popup-tab-essay">
+                    <img src="/static/img/popup_button2-2.png" alt="보낸 일기" />
+                    <span class="tab-label">보낸</span>
+                </button>
+            </div>
+
+            <div class="popup-close">
+                <img src="/static/img/popup_icon1.png" alt="닫기">
+            </div>
+        </div>
+        <div class="popup-content">
+            <div class="popup-image">
+                <img src="/static/img/change2_img.png" alt="일기 이미지">
+            </div>
+            <div class="popup-date-vocab">
+                <div class="popup-date">2025-07-17
+                    <img class="popup-date-icon" src="/static/img/popup_icon4.png" alt="날씨">
+                </div>
+                <div class="popup-vocab">
+                    <div class="popup-vocab-list">
+                        <span>hurt</span>
+                        <span>say / said</span>
+                        <span>apologize</span>
+                        <span>make up</span>
+                        <span>together</span>
+                    </div>
+                    <div class="popup-vocab-list ko">
+                        <span>다친, 아픈</span>
+                        <span>말하다 / 말했다</span>
+                        <span>사과하다</span>
+                        <span>화해하다</span>
+                        <span>함께</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-diary-wrapper">
+            <div class="date-nav-button-wrapper">
+                <button class="date-nav-button prev">
+                    <img src="/static/img/popup_icon5.png" alt="이전 날짜" />
+                </button>
+            </div>
+
+            <div class="popup-diary">
+                <div class="popup-diary-toggle-wrapper">
+                  <div class="popup-diary-toggle">
+                    <button class="image-toggle-button" id="toggleButton" aria-pressed="false">
+                      <span class="toggle-text">OFF</span>
+                    </button>
+                    <div class="toggle-label">첫 글 보기</div>
+                  </div>
+                </div>
+              
+                <div class="popup-diary-title">Doyeon’s Love Story</div>
+                <div class="popup-diary-divider"></div>
+                <div class="popup-diary-content">
+                Hi Doyeon!!<br /> 
+                You like Jinwoo?! Wow, that’s so cool!<br /> 
+                I hope you and Jinwoo become good friends! I will help you!<br />
+                He goes to Taekwondo with me at 3 o’clock.<br />
+                After Taekwondo, he always says, “Let’s go eat tteokbokki!”<br /> 
+                He really loves tteokbokki! But I don’t know what his hobby is.<br />
+                Do you want me to ask him for you? Let me know!
+                </div>
+              </div>
+
+            <div class="date-nav-button-wrapper">
+                <button class="date-nav-button next">
+                    <img src="/static/img/popup_icon6.png" alt="다음 날짜" />
+                </button>
+            </div>
+        </div>
+
+
+        <div class="popup-actions">
+            <button class="icon icon-edit">
+                <img src="/static/img/popup_icon2.png" alt="수정">
+            </button>
+            <button class="icon icon-share">
+                <img src="/static/img/popup_icon3.png" alt="공유">
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        const toggleBtn = document.getElementById('toggleButton');
+        const toggleText = toggleBtn.querySelector('.toggle-text');
+
+        toggleBtn.addEventListener('click', () => {
+            const isPressed = toggleBtn.getAttribute('aria-pressed') === 'true';
+            toggleBtn.setAttribute('aria-pressed', !isPressed);
+            toggleText.textContent = isPressed ? 'OFF' : 'ON';
+        });
+    </script>
+</body>
+
+</html>

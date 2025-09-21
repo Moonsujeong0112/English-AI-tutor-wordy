@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wordy Diary Popup UI</title>
+    <link rel="stylesheet" href="/static/popup_diary.css">
+</head>
+
+<body>
+    <div class="popup">
+        <div class="popup-header">
+            <div class="popup-tabs">
+
+                <button class="popup-tab popup-tab-diary">
+                    <img src="/static/img/popup_button1-2.png" alt="일기 배경" />
+                    <span class="tab-label">일기</span>
+                </button>
+                <button class="popup-tab popup-tab-essay">
+                    <img src="/static/img/popup_button2-2.png" alt="에세이 배경" />
+                    <span class="tab-label">에세이</span>
+                </button>
+            </div>
+
+            <div class="popup-close">
+                <img src="/static/img/popup_icon1.png" alt="닫기">
+            </div>
+        </div>
+        <div class="popup-content">
+            <div class="popup-image">
+                <img src="/static/img/diary2_img.png" alt="일기 이미지">
+            </div>
+            <div class="popup-date-vocab">
+                <div class="popup-date">2025-07-12
+                    <img class="popup-date-icon" src="/static/img/popup_icon4.png" alt="날씨">
+                </div>
+                <div class="popup-vocab">
+                    <div class="popup-vocab-list">
+                        <span>scratched</span>
+                        <span>butt</span>
+                        <span>scared</span>
+                        <span>held</span>
+                        <span>keychain</span>
+                    </div>
+                    <div class="popup-vocab-list ko">
+                        <span>긁었다</span>
+                        <span>엉덩이</span>
+                        <span>무서워하는</span>
+                        <span>잡았다</span>
+                        <span>열쇠고리</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-diary-wrapper">
+            <div class="date-nav-button-wrapper">
+                <button class="date-nav-button prev">
+                    <img src="/static/img/popup_icon5.png" alt="이전 날짜" />
+                </button>
+            </div>
+
+            <div class="popup-diary">
+                <div class="popup-diary-toggle-wrapper">
+                  <div class="popup-diary-toggle">
+                    <button class="image-toggle-button" id="toggleButton" aria-pressed="false">
+                      <span class="toggle-text">OFF</span>
+                    </button>
+                    <div class="toggle-label">첫 글 보기</div>
+                  </div>
+                </div>
+              
+                <div class="popup-diary-title">Zoo Trip with My Family</div>
+                <div class="popup-diary-divider"></div>
+                <div class="popup-diary-content">
+                  Today I went to the zoo with my family.<br />
+                  I saw a big elephant and a tall giraffe.<br />
+                  The monkeys were so funny and loud.<br />
+                  One monkey even scratched its butt!<br />
+                  I laughed a lot and took many pictures.<br />
+                  I ate ice cream and a hotdog for lunch.<br />
+                  My little brother got scared of the lion.<br />
+                  I held his hand and told him it's okay.<br />
+                  Before we went home, I bought a tiger keychain.<br />
+                  It was the best zoo trip ever!<br />
+                </div>
+              </div>
+
+            <div class="date-nav-button-wrapper">
+                <button class="date-nav-button next">
+                    <img src="/static/img/popup_icon6.png" alt="다음 날짜" />
+                </button>
+            </div>
+        </div>
+
+
+        <div class="popup-actions">
+            <button class="icon icon-edit">
+                <img src="/static/img/popup_icon2.png" alt="수정">
+            </button>
+            <button class="icon icon-share">
+                <img src="/static/img/popup_icon3.png" alt="공유">
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        const toggleBtn = document.getElementById('toggleButton');
+        const toggleText = toggleBtn.querySelector('.toggle-text');
+
+        toggleBtn.addEventListener('click', () => {
+            const isPressed = toggleBtn.getAttribute('aria-pressed') === 'true';
+            toggleBtn.setAttribute('aria-pressed', !isPressed);
+            toggleText.textContent = isPressed ? 'OFF' : 'ON';
+        });
+    </script>
+</body>
+
+</html>

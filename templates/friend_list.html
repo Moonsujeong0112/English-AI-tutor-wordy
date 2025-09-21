@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/static/friend_list.css" />
+    <title>Wordy friend list UI</title>
+</head>
+
+<body>
+    <div class="wordy-frame">
+        <header class="wordy-header">
+            <img class="header-left-icon" src="/static/img/Exchange diary_icon2.png" alt="Exchange Diary Icon" />
+            <button class="logo-button">
+                <img src="/static/img/chatbot_logo1.png" alt="Wordy Logo" />
+            </button>
+
+            <!-- 아이콘 -->
+            <div class="icons">
+                <button class="icon-button" aria-label="알림">
+                    <img src="/static/img/main_icon4.png" alt="알림 아이콘" />
+                </button>
+                <button class="icon-button" aria-label="사용자">
+                    <img src="/static/img/mypage_icon4.png" alt="사용자 아이콘" />
+                </button>
+            </div>
+        </header>
+
+        <main class="wordy-main">
+
+            <!-- 검색창 -->
+            <form class="search-form" onsubmit="return false;">
+                <input type="search" placeholder="Search" aria-label="Search" />
+                <button type="submit">
+                    <img src="{% static 'img/voca_image3.png' %}" alt="검색" class="search-icon" />
+                </button>
+            </form>
+
+            <div class="friends-button-wrapper">
+                <button class="friends-button" aria-label="친구 추가"> 
+                    <img src="/static/img/friends_button2.png" alt="친구 추가 버튼" />
+                </button>
+            </div>
+
+            <section class="friend-list-container">
+                <!-- 친구 수 헤더 -->
+                <div class="friend-count">친구 12명</div>
+              
+                <div class="friend-list-grid">
+                  <!-- 왼쪽 열 -->
+                  <div class="friend-column">
+                    <div class="friend-card">
+                      <img src="/static/img/doyeon_profile.png" alt="도연" class="friend-avatar" />
+                      <div class="friend-info">
+                        <div class="friend-name">도연</div>
+                        <div class="friend-mutual">함께 아는 친구 3명</div>
+                      </div>
+                    </div>
+                    <div class="friend-card">
+                      <img src="/static/img/hyunjin_profile.png" alt="현진" class="friend-avatar" />
+                      <div class="friend-info">
+                        <div class="friend-name">현진</div>
+                        <div class="friend-mutual">함께 아는 친구 1명</div>
+                      </div>
+                    </div>
+                    <div class="friend-card">
+                      <img src="/static/img/gayoung_profile.png" alt="가영" class="friend-avatar" />
+                      <div class="friend-info">
+                        <div class="friend-name">가영</div>
+                        <div class="friend-mutual">함께 아는 친구 5명</div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="friend-divider"></div> <!-- ← 구분선 -->
+
+
+                  <!-- 오른쪽 열 -->
+                  <div class="friend-column">
+                    <div class="friend-card">
+                      <img src="/static/img/eunyoung_profile.png" alt="은영" class="friend-avatar" />
+                      <div class="friend-info">
+                        <div class="friend-name">은영</div>
+                        <div class="friend-mutual">함께 아는 친구 1명</div>
+                      </div>
+                      <button class="add-friend-button">
+                        <img src="/static/img/add_button.png" alt="추가" />
+                      </button>
+                    </div>
+                    <div class="friend-card">
+                      <img src="/static/img/soojung_profile.png" alt="Soojung" class="friend-avatar" />
+                      <div class="friend-info">
+                        <div class="friend-name">Soojung</div>
+                        <div class="friend-mutual">함께 아는 친구 8명</div>
+                      </div>
+                      <button class="add-friend-button">
+                        <img src="/static/img/add_button.png" alt="추가" />
+                      </button>
+                    </div>
+                    <div class="friend-card">
+                      <img src="/static/img/heesun_profile.png" alt="희선" class="friend-avatar" />
+                      <div class="friend-info">
+                        <div class="friend-name">희선</div>
+                        <div class="friend-mutual">함께 아는 친구 2명</div>
+                      </div>
+                      <button class="add-friend-button">
+                        <img src="/static/img/add_button.png" alt="추가" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+        </main>
+    </div>
+    <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.header-left-icon').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/mypage';
+      });
+    });
+  </script>
+</body>
+
+</html>

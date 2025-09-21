@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1200" />
+  <link rel="stylesheet" href="/static/payment_1.css" />
+  <title>Wordy Language Learning App</title>
+</head>
+
+<body>
+  <div class="wordy-frame">
+    <header class="wordy-header">
+      <!-- 로고 버튼 -->
+      <button class="logo-button">
+        <img src="/static/img/chatbot_logo1.png" alt="Wordy Logo" />
+      </button>
+      <div class="icons">
+        <button class="icon-button" aria-label="알림">
+          <img src="/static/img/main_icon4.png" alt="알림 아이콘" />
+        </button>
+        <button class="icon-button" aria-label="사용자">
+          <img src="/static/img/mypage_icon4.png" alt="사용자 아이콘" />
+        </button>
+      </div>
+    </header>
+
+    <main class="wordy-main">
+
+      <button class="back-arrow">
+        <img src="/static/img/payment2_icon3.png" alt="뒤로가기" style="width:24px; height:38px;">
+      </button>
+      <div class="select-text">일기장 5개를 선택해주세요.</div>
+
+
+        <div class="word-grid">
+          <!-- 1행 -->
+          <div class="book-row">
+            <div class="books">
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image1.png" alt="책1" class="book-image" />
+           
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image2.png" alt="책2" class="book-image" />
+             
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image3.png" alt="책3" class="book-image" />
+               
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image4.png" alt="책4" class="book-image" />
+           
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image5.png" alt="책5" class="book-image" />
+         
+              </div>
+            </div>
+            <img src="/static/img/bookshelf_bar.png" alt="책장 바" class="shelf-bar" />
+          </div>
+
+          <!-- 2행 -->
+          <div class="book-row">
+            <div class="books">
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image6.png" alt="책6" class="book-image" />
+             
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image7.png" alt="책7" class="book-image" />
+              
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image8.png" alt="책8" class="book-image" />
+            
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image9.png" alt="책9" class="book-image" />
+              
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image10.png" alt="책10" class="book-image" />
+             
+              </div>
+            </div>
+            <img src="/static/img/bookshelf_bar.png" alt="책장 바" class="shelf-bar" />
+          </div>
+
+
+          <!-- 3행 -->
+          <div class="book-row">
+            <div class="books">
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image11.png" alt="책6" class="book-image" />
+              
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image12.png" alt="책7" class="book-image" />
+            
+              </div>
+              <div class="book-item">
+                <img src="/static/img/bookshelf_image13.png" alt="책8" class="book-image" />
+             
+              </div>
+
+              </button>
+            </div>
+          </div>
+          <img src="/static/img/bookshelf_bar.png" alt="책장 바" class="shelf-bar" />
+        </div>
+
+      <button class="next-arrow" onclick="window.location.href='/payment2'" aria-label="다음">
+        <img src="/static/img/payment2_button2.png" alt="다음 버튼" />
+      </button>
+
+    </main>
+
+
+
+
+  </div>
+  <script src="/static/payment_1.js"></script>
+  <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main';
+      });
+    });
+    // 뒤로가기 버튼 클릭 시 /bookshelf로 이동
+    document.querySelectorAll('.back-arrow').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/bookshelf';
+      });
+    });
+  </script>
+</body>
+
+</html>

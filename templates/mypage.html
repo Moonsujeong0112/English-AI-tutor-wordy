@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1194, initial-scale=1.0" />
+  <title>My Page</title>
+  <link rel="stylesheet" href="/static/mypage.css" />
+</head>
+<body>
+  <div class="main-frame">
+    
+    <!-- 헤더 -->
+    <div class="header">
+      <button class="logo-button" aria-label="Wordy 로고">
+        <img src="/static/img/mypage_logo.png" alt="Wordy 로고" />
+      </button>
+      <div class="icons">
+        <button class="icon-button" aria-label="알림">
+          <img src="/static/img/main_icon4.png" alt="알림 아이콘" />
+        </button>
+        <button class="icon-button" aria-label="사용자">
+          <img src="/static/img/mypage_icon4.png" alt="사용자 아이콘" />
+        </button>
+      </div>
+    </div>
+
+    <!-- 프로필 카드 -->
+    <div class="profile-card">
+      <button class="profile-image-button" aria-label="프로필 수정">
+        <img src="/static/img/mypage_image.png" alt="프로필 이미지" class="profile-image" />
+      </button>
+    
+      <div class="profile-info">
+        <div class="welcome-message">낙영님 반갑습니다!</div>
+        <button class="logout-button">
+          <img src="/static/img/mypage_button1.png" alt="로그아웃 버튼" />
+        </button>
+      </div>
+    
+      <!-- 오른쪽 하단 버튼 -->
+      <button class="btn-edit-profile" aria-label="내 정보 수정">
+        <img src="/static/img/mypage_button2.png" alt="내 정보 수정" />
+      </button>
+    </div>
+
+
+   <!-- 메뉴 카드 -->
+<div class="menu-card">
+
+  <!-- 구독정보 -->
+  <div class="menu-column">
+    <button class="menu-title">
+      <img src="/static/img/mypage_button3.png" alt="구독 정보" />
+    </button>
+    <ul class="menu-list">
+      <li>
+        <span>요금제 안내</span>
+        <button class="menu-arrow-button" aria-label="요금제 안내 이동">
+          <img src="/static/img/mypage_icon1.png" alt="이동 아이콘" />
+        </button>
+      </li>
+      <li>
+        <span>결제 정보</span>
+        <button class="menu-arrow-button" aria-label="결제 정보 이동">
+          <img src="/static/img/mypage_icon1.png" alt="이동 아이콘" />
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 친구 -->
+  <div class="menu-column">
+    <button class="menu-title">
+      <img src="/static/img/mypage_button4.png" alt="친구" />
+    </button>
+    <ul class="menu-list">
+      <li>
+        <span>친구 목록</span>
+        <button class="menu-arrow-button" aria-label="친구 목록 이동">
+          <img src="/static/img/mypage_icon1.png" alt="이동 아이콘" />
+        </button>
+      </li>
+      <li>
+        <span>교환 일기</span>
+        <button class="menu-arrow-button" aria-label="교환 일기 이동">
+          <img src="/static/img/mypage_icon1.png" alt="이동 아이콘" />
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 설정 -->
+  <div class="menu-column">
+    <button class="menu-title">
+      <img src="/static/img/mypage_button5.png" alt="설정" />
+    </button>
+    <ul class="menu-list">
+      <li>
+        <span>알림 설정</span>
+        <button class="menu-arrow-button" aria-label="알림 설정 이동">
+          <img src="/static/img/mypage_icon1.png" alt="이동 아이콘" />
+        </button>
+      </li>
+      <li>
+        <span>언어/접근성</span>
+        <button class="menu-arrow-button" aria-label="언어 접근성 이동">
+          <img src="/static/img/mypage_icon1.png" alt="이동 아이콘" />
+        </button>
+      </li>
+      <li>
+        <span>고객센터</span>
+        <button class="menu-arrow-button" aria-label="고객센터 이동">
+          <img src="/static/img/mypage_icon1.png" alt="이동 아이콘" />
+        </button>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+  </div>
+  <script>
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-user').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    // 친구 > 교환 일기 li 클릭 시 /ex-diary로 이동
+    document.querySelectorAll('.menu-column').forEach(col => {
+      const lis = col.querySelectorAll('li');
+      lis.forEach(li => {
+        const span = li.querySelector('span');
+        if (span && span.textContent.trim() === '교환 일기') {
+          li.addEventListener('click', function() {
+            window.location.href = '/ex-diary';
+          });
+        }
+        if (span && span.textContent.trim() === '친구 목록') {
+          li.addEventListener('click', function() {
+            window.location.href = '/friend-list';
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

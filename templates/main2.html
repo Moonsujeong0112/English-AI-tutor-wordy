@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1194, initial-scale=1.0">
+  <title>Wordy Main UI</title>
+  <link rel="stylesheet" href="/static/main2.css">
+  <link rel="stylesheet" href="/static/popup_diary.css">
+  <style>
+    .menu-box:active {
+      transform: scale(1.06);
+      box-shadow: 0 4px 16px rgba(255, 167, 51, 0.18);
+    }
+  </style>
+</head>
+<body>
+  <div class="main-frame">
+    <div class="header">
+      <button class="logo-button" aria-label="Wordy 로고 클릭">
+      <img src="/static/img/main_logo1.png" alt="Wordy 로고" width="304" height="99" style="object-fit:contain;" />
+    </button>
+      <div class="icons">
+        <button class="icon-bell icon-button" aria-label="알림">
+          <img src="/static/img/main_icon4.png" alt="bell icon" style="width:100%; height:100%;">
+        </button>
+        <button class="icon-user icon-button" aria-label="사용자">
+          <img src="/static/img/main_icon5.png" alt="user icon" style="width:100%; height:100%;">
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="upper-left-column">
+        <div class="streak-box-wrapper" style="position:relative;display:inline-block;width:518px;height:89px;">
+          <div class="streak-box">
+            <img src="/static/img/main_icon1.png" alt="streak icon" class="streak-icon" />
+            <span class="streak-text">20일째 연속 기록 중!</span>
+          </div>
+          <img src="/static/img//main_image1.png" alt="streak deco" class="streak-deco" />
+        </div>
+        <button class="reward-box" aria-label="보상 배너">
+          <img src="/static/img/main_banner1.png" alt="보상 배너">
+        </button>
+      </div>
+      <div class="upper-right-column">
+        <div id="calendar-container"></div>
+      </div>
+    </div>
+    <div class="bottom-center-row">
+      <div class="menu-row">
+        <button class="menu-box" aria-label="Wordy와 영어 글쓰기" id="chatbotBtn">
+          <img src="/static/img/main_button1.png" alt="Wordy와 영어 글쓰기">
+        </button>
+        <button class="menu-box" aria-label="나의 책장">
+          <img src="/static/img/main_button2.png" alt="나의 책장">
+        </button>
+        <button class="menu-box" aria-label="단어장" id="vocaBtn">
+          <img src="/static/img/main_button3.png" alt="단어장">
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="/static/calendar2.js"></script>
+  <script src="/static/popup_diary.js"></script>
+  <div id="popup-diary-container" style="display:none;"></div>
+  <script>
+    // 단어장 버튼 클릭 시 voca로 이동
+    document.getElementById('vocaBtn').addEventListener('click', function() {
+      this.classList.add('clicked');
+      setTimeout(() => {
+        this.classList.remove('clicked');
+        window.location.href = '/voca';
+      }, 120);
+    });
+    // Wordy와 영어 글쓰기 버튼 클릭 시 chatbot-wordy로 이동
+    document.getElementById('chatbotBtn').addEventListener('click', function() {
+      this.classList.add('clicked');
+      setTimeout(() => {
+        this.classList.remove('clicked');
+        window.location.href = '/chatbot-wordy';
+      }, 120);
+    });
+    // 사용자 아이콘 클릭 시 mypage로 이동
+    document.querySelectorAll('.logo-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/main2';
+      });
+    });
+    document.querySelectorAll('.icon-user').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/mypage';
+      });
+    });
+    // 보상 배너 클릭 시 /payment1로 이동
+    document.querySelectorAll('.reward-box').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.location.href = '/payment1';
+      });
+    });
+    // 나의 책장(두 번째 .menu-box) 클릭 시 /bookshelf로 이동
+    var menuBoxes = document.querySelectorAll('.menu-box');
+    if (menuBoxes.length > 1) {
+      menuBoxes[1].addEventListener('click', function() {
+        window.location.href = '/bookshelf';
+      });
+    }
+  </script>
+</body>
+</html> 

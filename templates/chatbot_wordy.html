@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wordy English Writing Chatbot</title>
+    <link rel="stylesheet" href="/static/chatbot_wordy.css">
+</head>
+<body>
+<div class="wordy-frame">
+    <header class="wordy-header">
+        <div class="wordy-logo" id="wordyLogoBtn" style="cursor:pointer;">
+            <img src="/static/img/chatbot_logo1.png" alt="Wordy 로고" width="249" height="142" style="object-fit:contain;" />
+        </div>
+        <div class="toggle-container">
+          <button id="diaryBtn" class="toggle-btn active">일기쓰기</button>
+          <button id="essayBtn" class="toggle-btn">에세이 쓰기</button>
+        </div>
+        <div class="wordy-header-icons">
+          <img src="/static/img/chatbot_icon1.png" alt="알림" class="wordy-header-icon" />
+          <img src="/static/img/chatbot_icon2.png" alt="홈" class="wordy-header-icon" id="homeBtn" style="cursor:pointer;" />
+        </div>
+    </header>
+    <main class="wordy-main">
+        <div class="wordy-chat">
+            <!-- 초기 메시지는 JavaScript에서 동적으로 추가됩니다 -->
+        </div>
+        <form class="wordy-input-row">
+            <input class="wordy-input" type="text" placeholder="메시지를 입력하세요...">
+            <img src="/static/img/chatbot_icon4.png" alt="첨부" width="55" height="55" style="object-fit:contain;" />
+            <button type="submit" class="wordy-input-send">
+                <img src="/static/img/chatbot_icon3.png" alt="전송" width="55" height="55" style="object-fit:contain;" />
+            </button>
+        </form>
+    </main>
+</div>
+<script src="/static/chatbot_wordy.js"></script>
+<script src="/static/chatbot_toggle.js"></script>
+<script>
+  document.getElementById('wordyLogoBtn').onclick = function() {
+    window.location.href = '/main2';
+  };
+  document.getElementById('homeBtn').onclick = function() {
+    window.location.href = '/main2';
+  };
+</script>
+</body>
+</html> 
